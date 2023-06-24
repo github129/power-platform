@@ -170,17 +170,17 @@ The user types **Hello world** into **TextInput1**.
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------- | --------- |
 | `IsMatch( TextInput1.Text, "Hello world" )`                  | Tests whether the user's input matches, exactly, the string "Hello world".   | **true**  |
 | `IsMatch( TextInput1.Text, "Good bye" )`                     | Tests whether the user's input matches, exactly, the string "Good bye".      | **false** |
-| `IsMatch( TextInput1.Text, "hello", Contains )`              | Tests whether the user's input contains the word "hello" (case sensitive).   | **false** |
-| `IsMatch( TextInput1.Text, "hello", Contains & IgnoreCase )` | Tests whether the user's input contains the word "hello" (case insensitive). | **true**  |
+| `IsMatch( TextInput1.Text, "hello", MatchOptions.Contains )`              | Tests whether the user's input contains the word "hello" (case sensitive).   | **false** |
+| `IsMatch( TextInput1.Text, "hello", MatchOptions.Contains & MatchOptions.IgnoreCase )` | Tests whether the user's input contains the word "hello" (case insensitive). | **true**  |
 
 ### Predefined patterns
 
 | Formula                                                                                                             | Description                                                                                                                                        | Result    |
 | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| `IsMatch( "123-45-7890", Digit & Digit & Digit & Hyphen & Digit & Digit & Hyphen & Digit & Digit & Digit & Digit )` | Matches a United States Social Security Number                                                                                                     | **true**  |
-| `IsMatch( "joan@contoso.com", Email )`                                                                              | Matches an email address                                                                                                                           | **true**  |
-| `IsMatch( "123.456", MultipleDigits & Period & OptionalDigits )`                                                    | Matches a sequence of digits, a period, and then zero or more digits.                                                                              | **true**  |
-| `IsMatch( "123", MultipleDigits & Period & OptionalDigits )`                                                        | Matches a sequence of digits, a period, and then zero or more digits. A period doesn't appear in the text to match, so this pattern isn't matched. | **false** |
+| `IsMatch( "123-45-7890", Match.Digit & Match.Digit & Match.Digit & Match.Hyphen & Match.Digit & Match.Digit & Match.Hyphen & Match.Digit & Match.Digit & Match.Digit & Match.Digit )` | Matches a United States Social Security Number                                                                                                     | **true**  |
+| `IsMatch( "joan@contoso.com", Match.Email )`                                                                              | Matches an email address                                                                                                                           | **true**  |
+| `IsMatch( "123.456", Match.MultipleDigits & Match.Period & Match.OptionalDigits )`                                                    | Matches a sequence of digits, a period, and then zero or more digits.                                                                              | **true**  |
+| `IsMatch( "123", Match.MultipleDigits & Match.Period & Match.OptionalDigits )`                                                        | Matches a sequence of digits, a period, and then zero or more digits. A period doesn't appear in the text to match, so this pattern isn't matched. | **false** |
 
 ### Regular expressions
 
